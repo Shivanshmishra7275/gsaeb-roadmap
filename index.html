@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSAEB Roadmap</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>GSAEB Roadmap</h1>
+      <p>16-week backend + AI-integration plan for internship hiring readiness.</p>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Today</h2>
+        <div class="row">
+          <label for="startDate">Start date</label>
+          <input id="startDate" type="date" />
+        </div>
+        <div class="row">
+          <label for="mode">Mode</label>
+          <select id="mode">
+            <option value="normal">Normal (3–4h/day)</option>
+            <option value="busy">Busy (90m/day)</option>
+            <option value="exam">Exam Compression</option>
+          </select>
+        </div>
+        <div id="todayCard" class="mini-card"></div>
+      </section>
+
+      <section class="card">
+        <h2>KPI Dashboard</h2>
+        <div class="grid">
+          <label>Weekly deep-work hours <input id="kpiHours" type="number" min="0" /></label>
+          <label>Projects shipped <input id="kpiProjects" type="number" min="0" /></label>
+          <label>Applications sent <input id="kpiApplications" type="number" min="0" /></label>
+          <label>Mock interviews <input id="kpiMocks" type="number" min="0" /></label>
+        </div>
+        <div id="kpiSummary" class="mini-card"></div>
+      </section>
+
+      <section class="card">
+        <h2>Core Checklists</h2>
+        <ul id="checklist"></ul>
+      </section>
+
+      <section class="card">
+        <h2>Internship Application Tracker</h2>
+        <form id="applicationForm" class="grid">
+          <input name="company" placeholder="Company" required />
+          <input name="role" placeholder="Role" required />
+          <input name="date" type="date" required />
+          <select name="status">
+            <option>Applied</option>
+            <option>OA Received</option>
+            <option>Interviewing</option>
+            <option>Offer</option>
+            <option>Rejected</option>
+          </select>
+          <button type="submit">Add</button>
+        </form>
+        <ul id="applicationList" class="list"></ul>
+      </section>
+
+      <section class="card">
+        <h2>Interview Prep Tracker</h2>
+        <form id="interviewForm" class="grid">
+          <input name="topic" placeholder="Topic (e.g. DB indexing)" required />
+          <input name="date" type="date" required />
+          <input name="score" type="number" min="1" max="10" placeholder="Score/10" required />
+          <button type="submit">Log</button>
+        </form>
+        <ul id="interviewList" class="list"></ul>
+      </section>
+
+      <section class="card">
+        <h2>Week-by-Week Roadmap</h2>
+        <div id="roadmap"></div>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
