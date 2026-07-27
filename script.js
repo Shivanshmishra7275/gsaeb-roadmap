@@ -31,11 +31,15 @@ const baseDayPlan = [
 
 const roadmap = weeklyThemes.map((theme, index) => {
   const resources = [
-    "FastAPI docs / SQLBolt / PostgreSQL docs",
-    "GitHub Skills + official Git docs",
-    "Docker docs + GitHub Actions docs",
-    "OpenAI/Anthropic API docs + LangChain/LlamaIndex basics",
-    "NeetCode-style targeted DSA sets",
+    { label: "FastAPI docs", url: "https://fastapi.tiangolo.com/" },
+    { label: "SQLBolt", url: "https://sqlbolt.com/" },
+    { label: "PostgreSQL docs", url: "https://www.postgresql.org/docs/" },
+    { label: "GitHub Skills", url: "https://skills.github.com/" },
+    { label: "Docker docs", url: "https://docs.docker.com/" },
+    { label: "GitHub Actions docs", url: "https://docs.github.com/actions" },
+    { label: "OpenAI API docs", url: "https://platform.openai.com/docs" },
+    { label: "LangChain docs", url: "https://python.langchain.com/docs/introduction/" },
+    { label: "NeetCode roadmap", url: "https://neetcode.io/roadmap" },
   ];
   return {
     week: index + 1,
@@ -166,7 +170,9 @@ function renderRoadmap() {
           )
           .join("")}
       </ul>
-      <div class="resources"><strong>Resources:</strong> ${w.resources.join(" • ")}</div>
+      <div class="resources"><strong>Resources:</strong> ${w.resources
+        .map((r) => `<a href="${r.url}" target="_blank" rel="noreferrer">${r.label}</a>`)
+        .join(" • ")}</div>
     </article>`,
     )
     .join("");
