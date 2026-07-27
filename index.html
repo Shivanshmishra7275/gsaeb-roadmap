@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSAEB Roadmap</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="top">
+      <h1>GSAEB Roadmap</h1>
+      <p>Backend + AI Integration | 16 Weeks</p>
+    </header>
+
+    <main class="container">
+      <section class="card settings">
+        <label>
+          Start date
+          <input id="startDate" type="date" />
+        </label>
+        <label>
+          Mode
+          <select id="mode">
+            <option value="normal">Normal (3–4 hrs/day)</option>
+            <option value="busy">Busy (90 mins/day)</option>
+          </select>
+        </label>
+      </section>
+
+      <section id="today" class="card section active"></section>
+      <section id="roadmap" class="card section"></section>
+      <section id="resources" class="card section"></section>
+      <section id="kpi" class="card section"></section>
+      <section id="applications" class="card section"></section>
+      <section id="interview" class="card section"></section>
+    </main>
+
+    <nav class="tabs">
+      <button data-target="today" class="tab active">Today</button>
+      <button data-target="roadmap" class="tab">Weeks</button>
+      <button data-target="resources" class="tab">Resources</button>
+      <button data-target="kpi" class="tab">KPI</button>
+      <button data-target="applications" class="tab">Applications</button>
+      <button data-target="interview" class="tab">Interview</button>
+    </nav>
+
+    <script src="./data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+  </html>
